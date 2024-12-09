@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Styled Study Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    h1 {
+      font-size: 2rem;
+      color: #004085;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.1rem;
+      max-width: 800px;
+      margin: 0 auto 20px;
+      color: #555;
+    }
+
+    center {
+      display: block;
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    div {
+      margin-top: 20px;
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      color: #004085;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      margin-top: 30px;
+      margin-bottom: 15px;
+      color: #004085;
+    }
+
+    input[type="text"], textarea {
+      width: 60%;
+      padding: 10px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-top: 5px;
+      box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    textarea {
+      width: 90%;
+      height: 100px;
+      resize: vertical;
+    }
+
+    hr {
+      border: none;
+      height: 1px;
+      background-color: #ddd;
+      margin: 20px auto;
+      width: 90%;
+    }
+
+    .container-case-report-form, .container-screening-visit, .container-questionaries, .container-study-drug-dispensation-process, .container-scheduled-visit-form-bcg, .container-scheduled-visit-form-gem-doce, .container-survillence-cytology, .container-study-completion, .container-ae, .container-serious-ae, .container-study-drug-dispensation-log {
+      width: 90%;
+      max-width: 800px;
+      margin: 20px auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <center>
+    <h1>Title of Study</h1>
+    <p>Prospective multicentric study to analyse the outcome of Intravesical Bacillus Calmette-Guerin 
+      regimen and Gemcitabine-Docetaxel regimen in the treatment of High-Risk Bladder Cancer.</p>
+    <div>
+      <h3>Site / Center / Clinic Name: <input type="text"></h3>
+      <h3>Investigator Name: <input type="text"></h3>
+    </div>
+  </center>
+  <br>
+  <hr>
+
+  <div class="container-case-report-form">
+    <center><h1>Case Report Form</h1></center>
+
+    <section id="demographics">
+      <h2>Demographics</h2>
+    </section>
+
+    <section id="informed-consent">
+      <h2>Informed Consent</h2>
+    </section>
+
+    <section id="inclusion-criteria">
+      <h2>Inclusion Criteria</h2>
+    </section>
+
+    <section id="exclusion-criteria">
+      <h2>Exclusion Criteria</h2>
+    </section>
+  </div>
+
+  <div class="container-screening-visit">
+    <center><h1>Screening Visit</h1></center>
+
+    <section id="vital-signs">
+      <h2>Vital Signs</h2>
+    </section>
+
+    <section id="medical-history">
+      <h2>Medical History</h2>
+    </section>
+
+    <section id="ecog">
+      <h2>ECOG</h2>
+    </section>
+
+    <section id="physical-examination">
+      <h2>Physical Examination</h2>
+    </section>
+
+    <section id="laboratory-investigations">
+      <h2>Laboratory Investigations</h2>
+    </section>
+
+    <section id="haemotology">
+      <h2>Haemotology</h2>
+    </section>
+
+    <section id="blood-chemistry">
+      <h2>Blood Chemistry</h2>
+    </section>
+
+    <section id="urinalysis">
+      <h2>Urinalysis</h2>
+    </section>
+
+    <section id="urine-culture-sensitivity">
+      <h2>Urine Culture and Sensitivity</h2>
+    </section>
+
+    <section id="urine-cytology">
+      <h2>Urine Cytology</h2>
+    </section>
+
+    <section id="upper-tract-evaluation">
+      <h2>Upper Tract Evaluation</h2>
+    </section>
+
+    <section id="cytoscopy">
+      <h2>Cytoscopy</h2>
+    </section>
+
+    <section id="bladder-diagram-worksheet">
+      <h2>Bladder Diagram Worksheet</h2>
+    </section>
+
+    <section id="redo-turbt">
+      <h2>Redo TURBT</h2>
+    </section>
+
+    <section id="serum-pregnancy-test">
+      <h2>Serum Pregnancy Test</h2>
+    </section>
+
+    <section id="eau-risk-sstratification">
+      <h2>EAU Risk Sstratification</h2>
+    </section>
+
+    <section id="concomitant-medications">
+      <h2>Concomitant Medications</h2>
+    </section>
+
+    <section id="qol-assesments">
+      <h2>QoL Assesments</h2>
+    </section>
+  </div>
+
+  <div class="container-questionaries">
+    <center><h1>Questionaries</h1></center>
+
+    <section id="ipss">
+      <h2>International Prostate Symptom Score (IPSS)</h2>
+    </section>
+
+    <section id="eortc">
+      <h2>EORTC QLQ - NMIBC24</h2>
+    </section>
+  </div>
+
+  <div class="container-study-drug-dispensation-process">
+    <center><h1>Study Drug Dispensation Process</h1></center>
+
+    <section id="induction-intravesical-chemotherapy-or-bcg">
+      <h2>Induction (Adjuvant) Intravesical chemotherapy or BCG</h2>
+    </section>
+
+    <section id="maintenance-intravesical-bcg">
+      <h2>Maintenance Intravesical BCG</h2>
+    </section>
+
+    <section id="gemcitabine-docetaxel">
+      <h2>Gemcitabine-docetaxel (GEM-DOCE)</h2>
+    </section>
+  </div>
+
+  <div class="container-scheduled-visit-form-bcg">
+    <center><h1>SCHEDULED VISIT FORM- BCG
+      WEEKLY – 0,1,2,3,4,5,6,
+      MONTHLY (3 WEEKS AT)– 3,6,12,18,24,30,36</h1></center>
+
+    <section id="">
+      <h2>Form Contents</h2>
+    </section>
+  </div>
+
+  <div class="container-scheduled-visit-form-gem-doce">
+    <center><h1>SCHEDULED VISIT FORM- GEM/DOCE
+      WEEKLY – 0,1,2,3,4,5,6,
+      MONTHLY-36 MONTHS.</h1></center>
+
+    <section id="">
+      <h2>Form Contents</h2>
+    </section>
+  </div>
+
+  <div class="container-survillence-cytology">
+    <center><h1>3 MONTHLY SURVILLENCE CYSTOSCOPY -1,2 YEAR
+      6 MONTHLY -3,4 TH YEAR 
+      YEARLY</h1></center>
+
+    <section id="">
+      <h2>Form Contents</h2>
+    </section>
+  </div>
+
+  <div class="container-study-completion">
+    <center><h1>Study Completion</h1></center>
+
+    <section id="">
+      <h2>Form Contents</h2>
+    </section>
+  </div>
+
+  <div class="container-ae">
+    <center><h1>Adverse event Reporting Form</h1></center>
+
+    <section id="">
+      <h2>Form Contents</h2>
+    </section>
+  </div>
+
+  <div class="container-serious-ae">
+    <center><h1>Serious Adverse Event Reporting Form</h1></center>
+
+    <section id="">
+      <h2>Form Contents</h2>
+    </section>
+  </div>
+
+  <div class="container-study-drug-dispensation-log">
+    <center><h1>Study Drug Dispensation Log</h1></center>
+
+    <section id="">
+      <h2>Form Contents</h2>
+    </section>
+  </div>
+</body>
+</html>
