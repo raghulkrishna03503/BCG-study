@@ -3,291 +3,198 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Styled Study Form</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f9f9f9;
-      color: #333;
-      line-height: 1.6;
-    }
-
-    h1 {
-      font-size: 2rem;
-      color: #004085;
-      margin-bottom: 10px;
-    }
-
-    p {
-      font-size: 1.1rem;
-      max-width: 800px;
-      margin: 0 auto 20px;
-      color: #555;
-    }
-
-    center {
-      display: block;
-      text-align: center;
-      margin: 20px 0;
-    }
-
-    div {
-      margin-top: 20px;
-    }
-
-    h3 {
-      font-size: 1.2rem;
-      color: #004085;
-      margin-bottom: 10px;
-    }
-
-    h2 {
-      font-size: 1.5rem;
-      margin-top: 30px;
-      margin-bottom: 15px;
-      color: #004085;
-    }
-
-    input[type="text"], textarea {
-      width: 60%;
-      padding: 10px;
-      font-size: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      margin-top: 5px;
-      box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-
-    textarea {
-      width: 90%;
-      height: 100px;
-      resize: vertical;
-    }
-
-    hr {
-      border: none;
-      height: 1px;
-      background-color: #ddd;
-      margin: 20px auto;
-      width: 90%;
-    }
-
-    .container-case-report-form, .container-screening-visit, .container-questionaries, .container-study-drug-dispensation-process, .container-scheduled-visit-form-bcg, .container-scheduled-visit-form-gem-doce, .container-survillence-cytology, .container-study-completion, .container-ae, .container-serious-ae, .container-study-drug-dispensation-log {
-      width: 90%;
-      max-width: 800px;
-      margin: 20px auto;
-      background-color: #fff;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-
-    label {
-      font-weight: bold;
-      display: block;
-      margin-top: 10px;
-    }
-  </style>
+  <title>Hero Section</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <center>
-    <h1>Title of Study</h1>
-    <p>Prospective multicentric study to analyse the outcome of Intravesical Bacillus Calmette-Guerin 
-      regimen and Gemcitabine-Docetaxel regimen in the treatment of High-Risk Bladder Cancer.</p>
-    <div>
-      <h3>Site / Center / Clinic Name: <input type="text"></h3>
-      <h3>Investigator Name: <input type="text"></h3>
-    </div>
-  </center>
-  <br>
-  <hr>
+  <section class="hero-section">
+      <h1>Prospective multicentric study to analyse the outcome of Intravesical Bacillus Calmette- Guerin regimen and Gemcitabine-Docetaxel regimen in the treatment of High-Risk Bladder Cancer</h1>
+      <div class="hero-section-content">
+          <label for="clinicName">Site/Center/Clinic Name:</label>
+          <input type="text" id="clinicName" name="clinicName"><br>
+          <label for="investigatorName">Investigator Name:</label>
+          <input type="text" id="investigatorName" name="investigatorName">
+      </div>
+  </section>
+    
+  <div class="container">
+    <h2>Case Report Form</h2>
 
-  <div class="container-case-report-form">
-    <center><h1>Case Report Form</h1></center>
-
-    <section id="demographics">
-      <h2>Demographics</h2>
-    </section>
-
-    <section id="informed-consent">
-      <h2>Informed Consent</h2>
-    </section>
-
-    <section id="inclusion-criteria">
-      <h2>Inclusion Criteria</h2>
-    </section>
-
-    <section id="exclusion-criteria">
-      <h2>Exclusion Criteria</h2>
-    </section>
-  </div>
-
-  <div class="container-screening-visit">
-    <center><h1>Screening Visit</h1></center>
-
-    <section id="vital-signs">
-      <h2>Vital Signs</h2>
-    </section>
-
-    <section id="medical-history">
-      <h2>Medical History</h2>
-    </section>
-
-    <section id="ecog">
-      <h2>ECOG</h2>
-    </section>
-
-    <section id="physical-examination">
-      <h2>Physical Examination</h2>
-    </section>
-
-    <section id="laboratory-investigations">
-      <h2>Laboratory Investigations</h2>
-    </section>
-
-    <section id="haemotology">
-      <h2>Haemotology</h2>
-    </section>
-
-    <section id="blood-chemistry">
-      <h2>Blood Chemistry</h2>
-    </section>
-
-    <section id="urinalysis">
-      <h2>Urinalysis</h2>
-    </section>
-
-    <section id="urine-culture-sensitivity">
-      <h2>Urine Culture and Sensitivity</h2>
-    </section>
-
-    <section id="urine-cytology">
-      <h2>Urine Cytology</h2>
-    </section>
-
-    <section id="upper-tract-evaluation">
-      <h2>Upper Tract Evaluation</h2>
-    </section>
-
-    <section id="cytoscopy">
-      <h2>Cytoscopy</h2>
-    </section>
-
-    <section id="bladder-diagram-worksheet">
-      <h2>Bladder Diagram Worksheet</h2>
-    </section>
-
-    <section id="redo-turbt">
-      <h2>Redo TURBT</h2>
-    </section>
-
-    <section id="serum-pregnancy-test">
-      <h2>Serum Pregnancy Test</h2>
-    </section>
-
-    <section id="eau-risk-sstratification">
-      <h2>EAU Risk Sstratification</h2>
-    </section>
-
-    <section id="concomitant-medications">
-      <h2>Concomitant Medications</h2>
-    </section>
-
-    <section id="qol-assesments">
-      <h2>QoL Assesments</h2>
-    </section>
-  </div>
-
-  <div class="container-questionaries">
-    <center><h1>Questionaries</h1></center>
-
-    <section id="ipss">
-      <h2>International Prostate Symptom Score (IPSS)</h2>
-    </section>
-
-    <section id="eortc">
-      <h2>EORTC QLQ - NMIBC24</h2>
-    </section>
-  </div>
-
-  <div class="container-study-drug-dispensation-process">
-    <center><h1>Study Drug Dispensation Process</h1></center>
-
-    <section id="induction-intravesical-chemotherapy-or-bcg">
-      <h2>Induction (Adjuvant) Intravesical chemotherapy or BCG</h2>
-    </section>
-
-    <section id="maintenance-intravesical-bcg">
-      <h2>Maintenance Intravesical BCG</h2>
-    </section>
-
-    <section id="gemcitabine-docetaxel">
-      <h2>Gemcitabine-docetaxel (GEM-DOCE)</h2>
-    </section>
-  </div>
-
-  <div class="container-scheduled-visit-form-bcg">
-    <center><h1>SCHEDULED VISIT FORM- BCG
-      WEEKLY – 0,1,2,3,4,5,6,
-      MONTHLY (3 WEEKS AT)– 3,6,12,18,24,30,36</h1></center>
-
-    <section id="">
-      <h2>Form Contents</h2>
-    </section>
-  </div>
-
-  <div class="container-scheduled-visit-form-gem-doce">
-    <center><h1>SCHEDULED VISIT FORM- GEM/DOCE
-      WEEKLY – 0,1,2,3,4,5,6,
-      MONTHLY-36 MONTHS.</h1></center>
-
-    <section id="">
-      <h2>Form Contents</h2>
-    </section>
-  </div>
-
-  <div class="container-survillence-cytology">
-    <center><h1>3 MONTHLY SURVILLENCE CYSTOSCOPY -1,2 YEAR
-      6 MONTHLY -3,4 TH YEAR 
-      YEARLY</h1></center>
-
-    <section id="">
-      <h2>Form Contents</h2>
-    </section>
-  </div>
-
-  <div class="container-study-completion">
-    <center><h1>Study Completion</h1></center>
-
-    <section id="">
-      <h2>Form Contents</h2>
-    </section>
-  </div>
-
-  <div class="container-ae">
-    <center><h1>Adverse event Reporting Form</h1></center>
-
-    <section id="">
-      <h2>Form Contents</h2>
-    </section>
-  </div>
-
-  <div class="container-serious-ae">
-    <center><h1>Serious Adverse Event Reporting Form</h1></center>
-
-    <section id="">
-      <h2>Form Contents</h2>
-    </section>
-  </div>
-
-  <div class="container-study-drug-dispensation-log">
-    <center><h1>Study Drug Dispensation Log</h1></center>
-
-    <section id="">
-      <h2>Form Contents</h2>
-    </section>
+    <center>
+      <form>
+          <table style="border: none; width: 60%; text-align: left; margin: 0 auto;">
+              <tr>
+                  <td><label for="centreId">Centre ID</label></td>
+                  <td>
+                      <select id="centerId" class="form-control" required>
+                          <option value="">Select ID</option>
+                          <option value="001">001</option>
+                          <option value="002">002</option>
+                          <option value="003">003</option>
+                          <option value="004">004</option>
+                          <option value="005">005</option>
+                          <option value="006">006</option>
+                          <option value="007">007</option>
+                          <option value="008">008</option>
+                          <option value="009">009</option>
+                          <option value="010">010</option>
+                          <option value="011">011</option>
+                          <option value="012">012</option>
+                          <option value="013">013</option>
+                          <option value="014">014</option>
+                          <option value="015">015</option>
+                          <option value="016">016</option>
+                          <option value="017">017</option>
+                          <option value="018">018</option>
+                          <option value="019">019</option>
+                          <option value="020">020</option>
+                          <option value="021">021</option>
+                          <option value="022">022</option>
+                          <option value="023">023</option>
+                          <option value="024">024</option>
+                          <option value="025">025</option>
+                      </select>
+                  </td>
+              </tr>
+              <tr>
+                  <td><label for="principalInvestigator">Principal Investigator</label></td>
+                  <td>
+                      <select id="principalInvestigator" class="form-control" required>
+                          <option value="">Select Name</option>
+                          <option value="Dr.AmitabhSingh">Dr. Amitabh Singh</option>
+                          <option value="Dr.AdityaPradhan">Dr. Aditya Pradhan</option>
+                          <option value="Dr.GaneshBakshi">Dr. Ganesh Bakshi</option>
+                          <option value="Dr.GanganPrakash">Dr. Gangan Prakash</option>
+                          <option value="Dr.Ginil">Dr. Ginil</option>
+                          <option value="Dr.MayanKGupta">Dr. Mayan K Gupta</option>
+                          <option value="Dr.Ragavan">Dr. Ragavan</option>
+                          <option value="Dr.RahulJena">Dr. Rahul Jena</option>
+                          <option value="Dr.RupeshShah">Dr. Rupesh Shah</option>
+                          <option value="Dr.Raghunath">Dr. Raghunath</option>
+                          <option value="Dr.SanjaiAddla">Dr. Sanjai Addla</option>
+                          <option value="Dr.Srivatsa">Dr. Srivatsa</option>
+                          <option value="HemangBakshi">Hemang Bakshi</option>
+                      </select>
+                  </td>
+              </tr>
+              <tr>
+                  <td><label for="siteLocation">Site Location</label></td>
+                  <td>
+                      <select id="siteLocation" class="form-control" required>
+                          <option value="">Select Site Location</option>
+                          <option value="Andhra Pradesh">Andhra Pradesh</option>
+                          <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                          <option value="Assam">Assam</option>
+                          <option value="Bihar">Bihar</option>
+                          <option value="Chhattisgarh">Chhattisgarh</option>
+                          <option value="Goa">Goa</option>
+                          <option value="Gujarat">Gujarat</option>
+                          <option value="Haryana">Haryana</option>
+                          <option value="Himachal Pradesh">Himachal Pradesh</option>
+                          <option value="Jharkhand">Jharkhand</option>
+                          <option value="Karnataka">Karnataka</option>
+                          <option value="Kerala">Kerala</option>
+                          <option value="Madhya Pradesh">Madhya Pradesh</option>
+                          <option value="Maharashtra">Maharashtra</option>
+                          <option value="Manipur">Manipur</option>
+                          <option value="Meghalaya">Meghalaya</option>
+                          <option value="Mizoram">Mizoram</option>
+                          <option value="Nagaland">Nagaland</option>
+                          <option value="Odisha">Odisha</option>
+                          <option value="Punjab">Punjab</option>
+                          <option value="Rajasthan">Rajasthan</option>
+                          <option value="Sikkim">Sikkim</option>
+                          <option value="Tamil Nadu">Tamil Nadu</option>
+                          <option value="Telangana">Telangana</option>
+                          <option value="Tripura">Tripura</option>
+                          <option value="Uttar Pradesh">Uttar Pradesh</option>
+                          <option value="Uttarakhand">Uttarakhand</option>
+                          <option value="West Bengal">West Bengal</option>
+                          <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                          <option value="Chandigarh">Chandigarh</option>
+                          <option value="Dadra and Nagar Haveli and Daman and Diu">Dadra and Nagar Haveli and Daman and Diu</option>
+                          <option value="Lakshadweep">Lakshadweep</option>
+                          <option value="Delhi">Delhi</option>
+                          <option value="Puducherry">Puducherry</option>
+                      </select>
+                  </td>
+              </tr>
+          </table>
+      </form>
+    </center>
+    <br>
+    <table>
+        <thead>
+            <tr>
+                <th>Form Name</th>
+                <th>Fill Status</th>
+                <th>View Details</th>
+            </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Demographics</td>
+            <td id="demographicsStatus">OPEN</td>
+            <td><button class="action-btn" id="demographicsView">View</button></td>
+          </tr>
+          <tr>
+            <td>Informed Consent</td>
+            <td id="informedConsentStatus">OPEN</td>
+            <td><button class="action-btn" id="informedConsentView">View</button></td>
+          </tr>
+          <tr>
+            <td>Inclusion Criteria</td>
+            <td id="inclusionCriteriaStatus">OPEN</td>
+            <td><button class="action-btn" id="inclusionCriteriaView">View</button></td>
+          </tr>
+          <tr>
+            <td>Exclusion Criteria</td>
+            <td id="exclusionCriteriaStatus">OPEN</td>
+            <td><button class="action-btn" id="exclusionCriteriaView">View</button></td>
+          </tr>
+          <tr>
+            <td>Screening Visit</td>
+            <td id="screeningVisitStatus">OPEN</td>
+            <td><button class="action-btn" id="screeningVisitView">View</button></td>
+          </tr>
+          <tr>
+            <td>Study Drug Dispensation Process</td>
+            <td id="studyDrugDispensationProcessStatus">OPEN</td>
+            <td><button class="action-btn" id="studyDrugDispensationProcessView">View</button></td>
+          </tr>
+          <tr>
+            <td>Scheduled Visit Form - BCG</td>
+            <td id="scheduledVisitFormBCGStatus">OPEN</td>
+            <td><button class="action-btn" id="scheduledVisitFormBCGView">View</button></td>
+          </tr>
+          <tr>
+            <td>Scheduled Visit Form - GEM / DOCE</td>
+            <td id="scheduledVisitFormGEMDOCEStatus">OPEN</td>
+            <td><button class="action-btn" id="scheduledVisitFormGEMDOCEView">View</button></td>
+          </tr>
+          <tr>
+            <td>3 Monthly Surveillance Cystoscopy</td>
+            <td id="surveillanceCystoscopyStatus">OPEN</td>
+            <td><button class="action-btn" id="surveillanceCystoscopyView">View</button></td>
+          </tr>
+          <tr>
+            <td>Adverse Event Reporting Form</td>
+            <td id="adverseEventReportingFormStatus">OPEN</td>
+            <td><button class="action-btn" id="adverseEventReportingFormView">View</button></td>
+          </tr>
+          <tr>
+            <td>Serious Adverse Event Reporting Form</td>
+            <td id="seriousAdverseEventReportingFormStatus">OPEN</td>
+            <td><button class="action-btn" id="seriousAdverseEventReportingFormView">View</button></td>
+          </tr>
+          <tr>
+            <td>Study Drug Dispensation Log</td>
+            <td id="studyDrugDispensationLogStatus">OPEN</td>
+            <td><button class="action-btn" id="studyDrugDispensationLogView">View</button></td>
+          </tr>          
+        </tbody>
+    </table>
   </div>
 </body>
 </html>
