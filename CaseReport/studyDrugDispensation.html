@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Study Drug Dispensation Process</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #eef2f7;
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .hero-section {
+      background-color: #3b8f9a;
+      color: white;
+      padding: 20px 10px;
+      margin-bottom: 40px;
+    }
+
+    .hero-section h1 {
+      font-size: 1.8rem;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 40px;
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 15px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(10px);
+    }
+
+    .date-section {
+      margin-bottom: 30px;
+    }
+
+    .date-section label {
+      font-weight: 600;
+      color: #5f6368;
+      margin-right: 10px;
+    }
+
+    .date-section input[type="date"] {
+      padding: 8px 12px;
+      border: 1px solid #ced4da;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+
+    table {
+      width: 100%;
+      margin-top: 20px;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 12px 15px;
+      text-align: left;
+      border: 1px solid #ced4da;
+    }
+
+    th {
+      background-color: #3b8f9a;
+      color: white;
+      font-weight: 600;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f8f9fa;
+    }
+
+    td select, td input[type="text"] {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ced4da;
+      border-radius: 4px;
+      font-size: 0.9rem;
+    }
+
+    .status-cell {
+      text-align: center;
+    }
+
+    .action-btn {
+      background-color: #3b8f9a;
+      color: white;
+      padding: 5px 15px;
+      border-radius: 20px;
+      border: none;
+      cursor: pointer;
+      width: 100px;
+    }
+
+    .action-btn:hover {
+      background-color: #2a6f74;
+    }
+
+    .submit-btn {
+      display: block;
+      margin: 30px auto 0;
+      padding: 12px 40px;
+      background-color: #3b8f9a;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      font-size: 1.1rem;
+      cursor: pointer;
+    }
+
+    .submit-btn:hover {
+      background-color: #2a6f74;
+    }
+
+    a {
+    text-decoration: none;
+    color: white;
+    }
+
+    a:visited {
+        text-decoration: none;
+        color: white;
+    }
+
+  </style>
+</head>
+<body>
+  <section class="hero-section">
+    <h1>Study Drug Dispensation Process
+    </h1>
+  </section>
+
+  <div class="container">
+    <table>
+      <thead>
+        <tr>
+          <th>Assessment</th>
+          <th>Fill Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Induction (Adjuvant) Intravesical chemotherapy or BCG</td>
+          <td class="status-cell">OPEN</td>
+          <td><button class="action-btn"><a href="/StudyDrugDispensationProcess/induction.html">View</a></button></td>
+        </tr>
+        <tr>
+          <td>Maintenance Intravesical BCG</td>
+          <td class="status-cell">OPEN</td>
+          <td><button class="action-btn"><a href="/StudyDrugDispensationProcess/maintainance.html">View</a></button></td>
+        </tr>
+        <tr>
+          <td>Gemcitabine-docetaxel (GEM-DOCE)</td>
+          <td class="status-cell">OPEN</td>
+          <td><button class="action-btn"><a href="/StudyDrugDispensationProcess/gemicitabine.html">View</a></button></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <button type="submit" class="submit-btn">Submit</button>
+  </div>
+</body>
+</html>
