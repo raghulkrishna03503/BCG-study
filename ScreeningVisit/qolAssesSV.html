@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Screening Visit - QoL Assessments</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #eef2f7;
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .hero-section {
+      background-color: #3b8f9a;
+      color: white;
+      padding: 20px 10px;
+      margin-bottom: 40px;
+    }
+
+    .hero-section h1 {
+      font-size: 1.8rem;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 40px;
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 15px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(10px);
+    }
+
+    .form-group {
+      margin-bottom: 25px;
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      color: #5f6368;
+      margin-bottom: 8px;
+    }
+
+    select, input[type="date"] {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ced4da;
+      border-radius: 4px;
+      font-size: 0.9rem;
+    }
+
+    textarea {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ced4da;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    select:focus, input:focus, textarea:focus {
+      border-color: #3b8f9a;
+      outline: none;
+      box-shadow: 0 0 5px rgba(59, 143, 154, 0.3);
+    }
+
+    .submit-btn {
+      display: block;
+      margin: 30px auto 0;
+      padding: 12px 40px;
+      background-color: #3b8f9a;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      font-size: 1.1rem;
+      cursor: pointer;
+    }
+
+    .submit-btn:hover {
+      background-color: #2a6f74;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    /* Table styles from reference */
+    table {
+      width: 100%;
+      margin-top: 20px;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 12px 15px;
+      text-align: left;
+      border: 1px solid #ced4da;
+    }
+
+    th {
+      background-color: #3b8f9a;
+      color: white;
+      font-weight: 600;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f8f9fa;
+    }
+  </style>
+</head>
+<body>
+  <section class="hero-section">
+    <h1>Screening Visit - QoL Assessments</h1>
+  </section>
+
+  <div class="container">
+    <form id="qolForm">
+      <div class="form-group">
+        <label for="completedQol">Did the patient Complete QOL assessment questionnaires?</label>
+        <select id="completedQol" required>
+          <option value="">Select Option</option>
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+      </div>
+
+      <div id="dateField" class="form-group hidden">
+        <label for="completionDate">If yes, please specify the date</label>
+        <input type="date" id="completionDate">
+      </div>
+
+      <div id="reasonField" class="form-group hidden">
+        <label for="reason">If 'no', please select one of the following reason(s)</label>
+        <textarea id="reason"></textarea>
+      </div>
+
+      <button type="submit" class="submit-btn">Submit</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('completedQol').addEventListener('change', function() {
+      const dateField = document.getElementById('dateField');
+      const reasonField = document.getElementById('reasonField');
+      
+      if (this.value === 'yes') {
+        dateField.classList.remove('hidden');
+        reasonField.classList.add('hidden');
+        document.getElementById('completionDate').required = true;
+        document.getElementById('reason').required = false;
+      } else if (this.value === 'no') {
+        dateField.classList.add('hidden');
+        reasonField.classList.remove('hidden');
+        document.getElementById('completionDate').required = false;
+        document.getElementById('reason').required = true;
+      } else {
+        dateField.classList.add('hidden');
+        reasonField.classList.add('hidden');
+        document.getElementById('completionDate').required = false;
+        document.getElementById('reason').required = false;
+      }
+    });
+
+    document.getElementById('qolForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Form submitted successfully!');
+    });
+  </script>
+</body>
+</html>

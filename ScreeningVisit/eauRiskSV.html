@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Screening Visit - EAU Risk Stratification</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    /* Same styles as above */
+    body {
+      background-color: #eef2f7;
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .hero-section {
+      background-color: #3b8f9a;
+      color: white;
+      padding: 20px 10px;
+      margin-bottom: 40px;
+    }
+
+    .hero-section h1 {
+      font-size: 1.8rem;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 40px;
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 15px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(10px);
+    }
+
+    .form-group {
+      margin-bottom: 25px;
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      color: #5f6368;
+      margin-bottom: 8px;
+    }
+
+    select, input, textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ced4da;
+      border-radius: 4px;
+      font-size: 1rem;
+      color: #333;
+    }
+
+    textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    select:focus, input:focus, textarea:focus {
+      border-color: #3b8f9a;
+      outline: none;
+      box-shadow: 0 0 5px rgba(59, 143, 154, 0.3);
+    }
+
+    .submit-btn {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      background-color: #3b8f9a;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      margin-top: 30px;
+    }
+
+    .submit-btn:hover {
+      background-color: #2a6f74;
+    }
+  </style>
+</head>
+<body>
+  <section class="hero-section">
+    <h1>Screening Visit - EAU Risk Stratification</h1>
+  </section>
+
+  <div class="container">
+    <form id="riskStratificationForm">
+      <div class="form-group">
+        <label for="age">Age</label>
+        <select id="age" required>
+          <option value="">Select Age Range</option>
+          <option value="less70">Less than 70</option>
+          <option value="more70">Greater than or equal to 70</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="tumorStatus">Tumor Status</label>
+        <select id="tumorStatus" required>
+          <option value="">Select Status</option>
+          <option value="primary">Primary</option>
+          <option value="recurrent">Recurrent</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="tumorCount">No of Tumors</label>
+        <select id="tumorCount" required>
+          <option value="">Select Count</option>
+          <option value="single">Single</option>
+          <option value="multiple">Multiple</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="tumorDiameter">Maximum Tumor Diameter</label>
+        <select id="tumorDiameter" required>
+          <option value="">Select Diameter</option>
+          <option value="less3">Less than 3cm</option>
+          <option value="more3">Greater than or equal to 3cm</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="stage">Stage</label>
+        <select id="stage" required>
+          <option value="">Select Stage</option>
+          <option value="Ta">Ta</option>
+          <option value="T1">T1</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="cis">Concomitant CIS</label>
+        <select id="cis" required>
+          <option value="">Select Option</option>
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="whoGrade">WHO Grade (2004/2016)</label>
+        <select id="whoGrade" required>
+          <option value="">Select Grade</option>
+          <option value="lmp-lg">LMP-LG</option>
+          <option value="hg">HG</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="whoGrade1973">WHO Grade 1973</label>
+        <select id="whoGrade1973" required>
+          <option value="">Select Grade</option>
+          <option value="G1">G1</option>
+          <option value="G2">G2</option>
+          <option value="G3">G3</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="result">Result</label>
+        <textarea id="result" readonly></textarea>
+      </div>
+
+      <button type="submit" class="submit-btn">Submit</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('riskStratificationForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Form submitted successfully!');
+    });
+  </script>
+</body>
+</html>

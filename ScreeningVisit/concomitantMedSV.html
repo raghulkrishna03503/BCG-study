@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Screening Visit - Concomitant Medications</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #eef2f7;
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .hero-section {
+      background-color: #3b8f9a;
+      color: white;
+      padding: 20px 10px;
+      margin-bottom: 40px;
+    }
+
+    .hero-section h1 {
+      font-size: 1.8rem;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 40px;
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 15px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(10px);
+    }
+
+    .form-group {
+      margin-bottom: 25px;
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      color: #5f6368;
+      margin-bottom: 8px;
+    }
+
+    select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ced4da;
+      border-radius: 4px;
+      font-size: 1rem;
+      color: #333;
+    }
+
+    table {
+      width: 100%;
+      margin-top: 20px;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 12px 15px;
+      text-align: left;
+      border: 1px solid #ced4da;
+    }
+
+    th {
+      background-color: #3b8f9a;
+      color: white;
+      font-weight: 600;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f8f9fa;
+    }
+
+    td select, td input {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ced4da;
+      border-radius: 4px;
+      font-size: 0.9rem;
+    }
+
+    .add-row-btn {
+      display: block;
+      padding: 8px 20px;
+      background-color: #3b8f9a;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-bottom: 20px;
+    }
+
+    .delete-btn {
+      background-color: #3b8f9a;
+      color: white;
+      padding: 5px 15px;
+      border-radius: 20px;
+      border: none;
+      cursor: pointer;
+      width: 100px;
+    }
+
+    .delete-btn:hover {
+      background-color: #2a6f74;
+    }
+
+    .submit-btn {
+      display: block;
+      margin: 30px auto 0;
+      padding: 12px 40px;
+      background-color: #3b8f9a;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      font-size: 1.1rem;
+      cursor: pointer;
+    }
+
+    .submit-btn:hover {
+      background-color: #2a6f74;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <section class="hero-section">
+    <h1>Screening Visit - Concomitant Medications</h1>
+  </section>
+
+  <div class="container">
+    <form id="medicationsForm">
+      <div class="form-group">
+        <label for="onMedication">Was the patient on any Uroactive medication /Antibiotics?</label>
+        <select id="onMedication" required>
+          <option value="">Select Option</option>
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+      </div>
+
+      <div id="medicationTable" class="hidden">
+        <button type="button" class="add-row-btn" id="addRow">Add Medication</button>
+        <div class="table-container">
+          <table id="medTable">
+            <thead>
+              <tr>
+                <th>S.No.</th>
+                <th>Medication Name</th>
+                <th>Indication</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>Ongoing</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <button type="submit" class="submit-btn">Submit</button>
+    </form>
+  </div>
+
+  <script>
+    let rowCount = 0;
+
+    function addTableRow() {
+      rowCount++;
+      const tbody = document.querySelector('#medTable tbody');
+      const row = document.createElement('tr');
+      row.innerHTML = `
+        <td>${rowCount}</td>
+        <td><input type="text" required></td>
+        <td><input type="text" required></td>
+        <td><input type="date" required></td>
+        <td><input type="date" class="end-date"></td>
+        <td>
+          <select required>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+          </select>
+        </td>
+        <td><button type="button" class="delete-btn">Delete</button></td>
+      `;
+      tbody.appendChild(row);
+
+      // Add event listener to the delete button
+      row.querySelector('.delete-btn').addEventListener('click', function() {
+        row.remove();
+        updateSerialNumbers();
+      });
+    }
+
+    function updateSerialNumbers() {
+      const rows = document.querySelectorAll('#medTable tbody tr');
+      rows.forEach((row, index) => {
+        row.cells[0].textContent = index + 1;
+      });
+      rowCount = rows.length;
+    }
+
+    document.getElementById('onMedication').addEventListener('change', function() {
+      const medicationTable = document.getElementById('medicationTable');
+      if (this.value === 'yes') {
+        medicationTable.classList.remove('hidden');
+        if (rowCount === 0) addTableRow();
+      } else {
+        medicationTable.classList.add('hidden');
+      }
+    });
+
+    document.getElementById('addRow').addEventListener('click', addTableRow);
+
+    document.getElementById('medicationsForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Form submitted successfully!');
+    });
+  </script>
+</body>
+</html>
