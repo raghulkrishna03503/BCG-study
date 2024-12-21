@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Screening Visit - Cytoscopy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #eef2f7;
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .hero-section {
+      background-color: #3b8f9a;
+      color: white;
+      padding: 20px 10px;
+      margin-bottom: 40px;
+    }
+
+    .hero-section h1 {
+      font-size: 1.8rem;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 40px;
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 15px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-group {
+      margin-bottom: 25px;
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      color: #5f6368;
+      margin-bottom: 8px;
+    }
+
+    select, input[type="date"], input[type="text"], input[type="number"], input[type="file"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ced4da;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+
+    .details-section {
+      display: none;
+      margin-top: 20px;
+    }
+
+    .multi-select {
+      margin-top: 10px;
+    }
+
+    .selected-items {
+      margin-top: 10px;
+      padding: 10px;
+      background-color: #f8f9fa;
+      border-radius: 4px;
+      min-height: 40px;
+    }
+
+    .item-tag {
+      display: inline-block;
+      background-color: #e2e6ea;
+      padding: 5px 10px;
+      margin: 2px;
+      border-radius: 15px;
+      font-size: 0.9rem;
+    }
+
+    .remove-item {
+      margin-left: 5px;
+      cursor: pointer;
+      color: #dc3545;
+    }
+
+    .other-field {
+      margin-top: 10px;
+      display: none;
+    }
+
+    .file-list {
+      margin-top: 10px;
+      padding: 10px;
+      background-color: #f8f9fa;
+      border-radius: 4px;
+    }
+
+    .file-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 5px;
+      margin: 5px 0;
+      background-color: #fff;
+      border-radius: 4px;
+    }
+
+    .remove-file {
+      color: #dc3545;
+      cursor: pointer;
+      padding: 2px 8px;
+    }
+
+    .submit-btn {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      background-color: #3b8f9a;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      margin-top: 30px;
+    }
+
+    .submit-btn:hover {
+      background-color: #2a6f74;
+    }
+  </style>
+</head>
+<body>
+  <section class="hero-section">
+    <h1>Screening Visit - Cytoscopy</h1>
+  </section>
+
+  <div class="container">
+    <form id="cytoscopyForm">
+      <div class="form-group">
+        <label for="wasConducted">Was Cystoscopy conducted?</label>
+        <select id="wasConducted" required>
+          <option value="">Select</option>
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+      </div>
+
+      <div id="detailsSection" class="details-section">
+        <div class="form-group">
+          <label for="cystoscopyDate">Date of cystoscopy</label>
+          <input type="date" id="cystoscopyDate" required>
+        </div>
+
+        <div class="form-group">
+          <label for="cystoscopyNos">Cystoscopy Nos</label>
+          <select id="cystoscopyNos" required>
+            <option value="">Select</option>
+            <option value="single">Single</option>
+            <option value="multiple">Multiple</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Tumor Type(s)</label>
+          <select id="tumorTypes" class="multi-select">
+            <option value="">Select Tumor Type</option>
+            <option value="Papillary">Papillary</option>
+            <option value="Sessile">Sessile</option>
+            <option value="Flat Velvatte">Flat Velvatte</option>
+            <option value="Others">Others</option>
+          </select>
+          <div id="selectedTumorTypes" class="selected-items"></div>
+          <input type="text" id="otherTumorType" class="other-field" placeholder="Specify other tumor type">
+        </div>
+
+        <div class="form-group">
+          <label>Location(s)</label>
+          <select id="locations" class="multi-select">
+            <option value="">Select Location</option>
+            <option value="Right lateral">Right lateral</option>
+            <option value="Left lateral">Left lateral</option>
+            <option value="UV orifice">UV orifice</option>
+            <option value="Dome">Dome</option>
+            <option value="Base">Base</option>
+            <option value="Others">Others</option>
+          </select>
+          <div id="selectedLocations" class="selected-items"></div>
+          <input type="text" id="otherLocation" class="other-field" placeholder="Specify other location">
+        </div>
+
+        <div class="form-group">
+          <label for="sizes">Size(s)</label>
+          <input type="number" id="sizes" step="0.1" required>
+        </div>
+
+        <div class="form-group">
+          <label for="configurations">Configuration(s)</label>
+          <input type="text" id="configurations" required>
+        </div>
+
+        <div class="form-group">
+          <label for="numbers">Number(s)</label>
+          <select id="numbers" required>
+            <option value="">Select</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="otherMucosal">Other mucosal abnormality</label>
+          <input type="text" id="otherMucosal">
+        </div>
+
+        <div class="form-group">
+          <label for="procedureDone">Procedure Done</label>
+          <input type="text" id="procedureDone">
+        </div>
+
+        <div class="form-group">
+          <label for="bladderDiagram">Upload Bladder diagram Worksheet</label>
+          <input type="file" id="bladderDiagram" multiple>
+          <div id="fileList" class="file-list"></div>
+        </div>
+      </div>
+
+      <button type="submit" class="submit-btn">Submit</button>
+    </form>
+  </div>
+
+  <script>
+    // Initialize variables for storing selected items
+    const selectedTumorTypes = new Set();
+    const selectedLocations = new Set();
+    const uploadedFiles = new Set();
+
+    // Populate numbers dropdown (1-25)
+    const numbersSelect = document.getElementById('numbers');
+    for (let i = 1; i <= 25; i++) {
+      const option = document.createElement('option');
+      option.value = i;
+      option.textContent = i;
+      numbersSelect.appendChild(option);
+    }
+
+    // Show/hide main details section
+    document.getElementById('wasConducted').addEventListener('change', function() {
+      const detailsSection = document.getElementById('detailsSection');
+      detailsSection.style.display = this.value === 'yes' ? 'block' : 'none';
+    });
+
+    // Handle tumor types selection
+    document.getElementById('tumorTypes').addEventListener('change', function() {
+      if (this.value) {
+        if (this.value === 'Others') {
+          document.getElementById('otherTumorType').style.display = 'block';
+        } else {
+          selectedTumorTypes.add(this.value);
+          updateSelectedItems('selectedTumorTypes', selectedTumorTypes);
+        }
+        this.value = '';
+      }
+    });
+
+    // Handle locations selection
+    document.getElementById('locations').addEventListener('change', function() {
+      if (this.value) {
+        if (this.value === 'Others') {
+          document.getElementById('otherLocation').style.display = 'block';
+        } else {
+          selectedLocations.add(this.value);
+          updateSelectedItems('selectedLocations', selectedLocations);
+        }
+        this.value = '';
+      }
+    });
+
+    // Handle other tumor type input
+    document.getElementById('otherTumorType').addEventListener('change', function() {
+      if (this.value.trim()) {
+        selectedTumorTypes.add(this.value.trim());
+        updateSelectedItems('selectedTumorTypes', selectedTumorTypes);
+        this.value = '';
+        this.style.display = 'none';
+      }
+    });
+
+    // Handle other location input
+    document.getElementById('otherLocation').addEventListener('change', function() {
+      if (this.value.trim()) {
+        selectedLocations.add(this.value.trim());
+        updateSelectedItems('selectedLocations', selectedLocations);
+        this.value = '';
+        this.style.display = 'none';
+      }
+    });
+
+    // Update selected items display
+    function updateSelectedItems(containerId, items) {
+      const container = document.getElementById(containerId);
+      container.innerHTML = '';
+      items.forEach(item => {
+        const tag = document.createElement('span');
+        tag.className = 'item-tag';
+        tag.innerHTML = `${item} <span class="remove-item" onclick="removeItem('${containerId}', '${item}')">&times;</span>`;
+        container.appendChild(tag);
+      });
+    }
+
+    // Remove selected item
+    function removeItem(containerId, item) {
+      if (containerId === 'selectedTumorTypes') {
+        selectedTumorTypes.delete(item);
+        updateSelectedItems('selectedTumorTypes', selectedTumorTypes);
+      } else if (containerId === 'selectedLocations') {
+        selectedLocations.delete(item);
+        updateSelectedItems('selectedLocations', selectedLocations);
+      }
+    }
+
+    // Handle file uploads
+    document.getElementById('bladderDiagram').addEventListener('change', function(e) {
+      const fileList = document.getElementById('fileList');
+      
+      for (let file of e.target.files) {
+        uploadedFiles.add(file);
+        const fileItem = document.createElement('div');
+        fileItem.className = 'file-item';
+        fileItem.innerHTML = `
+          ${file.name}
+          <span class="remove-file" onclick="removeFile('${file.name}')">&times;</span>
+        `;
+        fileList.appendChild(fileItem);
+      }
+    });
+
+    // Remove uploaded file
+    function removeFile(fileName) {
+      uploadedFiles.forEach(file => {
+        if (file.name === fileName) {
+          uploadedFiles.delete(file);
+          const fileList = document.getElementById('fileList');
+          fileList.innerHTML = '';
+          uploadedFiles.forEach(remainingFile => {
+            const fileItem = document.createElement('div');
+            fileItem.className = 'file-item';
+            fileItem.innerHTML = `
+              ${remainingFile.name}
+              <span class="remove-file" onclick="removeFile('${remainingFile.name}')">&times;</span>
+            `;
+            fileList.appendChild(fileItem);
+          });
+        }
+      });
+    }
+
+    // Form submission
+    document.getElementById('cytoscopyForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Form submitted successfully!');
+    });
+  </script>
+</body>
+</html>

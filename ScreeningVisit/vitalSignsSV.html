@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Screening Visit - Vital Signs</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #eef2f7;
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .hero-section {
+      background-color: #3b8f9a;
+      color: white;
+      padding: 20px 10px;
+      margin-bottom: 40px;
+    }
+
+    .hero-section h1 {
+      font-size: 1.8rem;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 40px;
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 15px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(10px);
+    }
+
+    .form-group {
+      margin-bottom: 25px;
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      color: #5f6368;
+      margin-bottom: 8px;
+    }
+
+    select, input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ced4da;
+      border-radius: 4px;
+      font-size: 1rem;
+      color: #333;
+    }
+
+    select:focus, input:focus {
+      border-color: #3b8f9a;
+      outline: none;
+      box-shadow: 0 0 5px rgba(59, 143, 154, 0.3);
+    }
+
+    .bmi-result {
+      background-color: #f8f9fa;
+      padding: 15px;
+      border-radius: 4px;
+      margin-top: 10px;
+      text-align: center;
+      font-weight: 600;
+    }
+
+    .submit-btn {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      background-color: #3b8f9a;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      margin-top: 30px;
+    }
+
+    .submit-btn:hover {
+      background-color: #2a6f74;
+    }
+
+    .bp-inputs {
+      display: flex;
+      gap: 10px;
+    }
+
+    .bp-inputs select {
+      flex: 1;
+    }
+
+    .readonly-input {
+      background-color: #f8f9fa;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body>
+  <section class="hero-section">
+    <h1>Screening Visit - Vital Signs</h1>
+  </section>
+
+  <div class="container">
+    <form id="vitalSignsForm">
+      <div class="form-group">
+        <label for="height">Height (cm)</label>
+        <input type="number" id="height" min="100" max="250" required>
+      </div>
+
+      <div class="form-group">
+        <label for="weight">Weight (kg)</label>
+        <input type="number" id="weight" min="20" max="200" required>
+      </div>
+
+      <div class="form-group">
+        <label for="bmi">BMI (kg/m²)</label>
+        <input type="text" id="bmi" class="readonly-input" readonly>
+        <div id="bmiResult" class="bmi-result"></div>
+      </div>
+
+      <div class="form-group">
+        <label for="heartRate">Heart Rate (bpm)</label>
+        <select id="heartRate" required>
+          <option value="">Select Heart Rate</option>
+          <script>
+            for(let i = 40; i <= 200; i++) {
+              document.write(`<option value="${i}">${i}</option>`);
+            }
+          </script>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="temperature">Temperature (°C)</label>
+        <select id="temperature" required>
+          <option value="">Select Temperature</option>
+          <script>
+            for(let i = 35.0; i <= 42.0; i += 0.1) {
+              document.write(`<option value="${i.toFixed(1)}">${i.toFixed(1)}</option>`);
+            }
+          </script>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Blood Pressure (mmHg)</label>
+        <div class="bp-inputs">
+          <select id="systolic" required>
+            <option value="">Systolic</option>
+            <script>
+              for(let i = 70; i <= 200; i += 2) {
+                document.write(`<option value="${i}">${i}</option>`);
+              }
+            </script>
+          </select>
+          <select id="diastolic" required>
+            <option value="">Diastolic</option>
+            <script>
+              for(let i = 40; i <= 120; i += 2) {
+                document.write(`<option value="${i}">${i}</option>`);
+              }
+            </script>
+          </select>
+        </div>
+      </div>
+
+      <button type="submit" class="submit-btn">Submit</button>
+    </form>
+  </div>
+
+  <script>
+    function calculateBMI() {
+      const height = document.getElementById('height').value;
+      const weight = document.getElementById('weight').value;
+      const bmiInput = document.getElementById('bmi');
+      const bmiResult = document.getElementById('bmiResult');
+
+      if (height && weight) {
+        const heightInMeters = height / 100;
+        const bmi = (weight / (heightInMeters * heightInMeters)).toFixed(1);
+        bmiInput.value = bmi;
+
+        // BMI Classification
+        let classification;
+        if (bmi < 18.5) classification = "Underweight";
+        else if (bmi < 25) classification = "Normal weight";
+        else if (bmi < 30) classification = "Overweight";
+        else classification = "Obese";
+
+        bmiResult.textContent = `BMI Classification: ${classification}`;
+      }
+    }
+
+    // Add event listeners for height and weight inputs
+    document.getElementById('height').addEventListener('input', calculateBMI);
+    document.getElementById('weight').addEventListener('input', calculateBMI);
+
+    // Form submission
+    document.getElementById('vitalSignsForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      // Add your form submission logic here
+      alert('Form submitted successfully!');
+    });
+  </script>
+</body>
+</html>

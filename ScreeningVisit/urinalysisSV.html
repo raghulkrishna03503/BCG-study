@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Screening Visit - Urinalysis</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #eef2f7;
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .hero-section {
+      background-color: #3b8f9a;
+      color: white;
+      padding: 20px 10px;
+      margin-bottom: 40px;
+    }
+
+    .hero-section h1 {
+      font-size: 1.8rem;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 40px;
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 15px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-group {
+      margin-bottom: 25px;
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      color: #5f6368;
+      margin-bottom: 8px;
+    }
+
+    select, input[type="date"], textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ced4da;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .details-section {
+      display: none;
+      margin-top: 20px;
+    }
+
+    .submit-btn {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      background-color: #3b8f9a;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      margin-top: 30px;
+    }
+
+    .submit-btn:hover {
+      background-color: #2a6f74;
+    }
+  </style>
+</head>
+<body>
+  <section class="hero-section">
+    <h1>Screening Visit - Urinalysis</h1>
+  </section>
+
+  <div class="container">
+    <form id="urinalysisForm">
+      <div class="form-group">
+        <label for="wasConducted">Was urinalysis conducted?</label>
+        <select id="wasConducted" required>
+          <option value="">Select</option>
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+      </div>
+
+      <div id="detailsSection" class="details-section">
+        <div class="form-group">
+          <label for="reportDate">Date of Report</label>
+          <input type="date" id="reportDate" required>
+        </div>
+
+        <div class="form-group">
+          <label for="result">Result</label>
+          <select id="result" required>
+            <option value="">Select</option>
+            <option value="normal">Normal</option>
+            <option value="abnormal">Abnormal</option>
+          </select>
+        </div>
+
+        <div id="abnormalDetails" class="details-section">
+          <div class="form-group">
+            <label for="abnormalDetails">If Abnormal provide details</label>
+            <textarea id="abnormalDetails" required></textarea>
+          </div>
+        </div>
+      </div>
+
+      <button type="submit" class="submit-btn">Submit</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('wasConducted').addEventListener('change', function() {
+      const detailsSection = document.getElementById('detailsSection');
+      detailsSection.style.display = this.value === 'yes' ? 'block' : 'none';
+    });
+
+    document.getElementById('result').addEventListener('change', function() {
+      const abnormalDetails = document.getElementById('abnormalDetails');
+      abnormalDetails.style.display = this.value === 'abnormal' ? 'block' : 'none';
+    });
+
+    document.getElementById('urinalysisForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Form submitted successfully!');
+    });
+  </script>
+</body>
+</html>

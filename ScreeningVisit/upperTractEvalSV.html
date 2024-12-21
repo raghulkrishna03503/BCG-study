@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Screening Visit - Upper Tract Evaluation</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #eef2f7;
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .hero-section {
+      background-color: #3b8f9a;
+      color: white;
+      padding: 20px 10px;
+      margin-bottom: 40px;
+    }
+
+    .hero-section h1 {
+      font-size: 1.8rem;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 40px;
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 15px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-group {
+      margin-bottom: 25px;
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      color: #5f6368;
+      margin-bottom: 8px;
+    }
+
+    select, input[type="date"], textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ced4da;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .details-section {
+      display: none;
+      margin-top: 20px;
+    }
+
+    .submit-btn {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      background-color: #3b8f9a;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      margin-top: 30px;
+    }
+
+    .submit-btn:hover {
+      background-color: #2a6f74;
+    }
+  </style>
+</head>
+<body>
+  <section class="hero-section">
+    <h1>Screening Visit - Upper Tract Evaluation</h1>
+  </section>
+
+  <div class="container">
+    <form id="upperTractForm">
+      <div class="form-group">
+        <label for="wasTestDone">Was Upper tract evaluation test done?</label>
+        <select id="wasTestDone" required>
+          <option value="">Select</option>
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+      </div>
+
+      <div id="detailsSection" class="details-section">
+        <div class="form-group">
+          <label for="testDate">Date</label>
+          <input type="date" id="testDate" required>
+        </div>
+
+        <div class="form-group">
+          <label for="method">Method</label>
+          <select id="method" required>
+            <option value="">Select</option>
+            <option value="ct-urogram">CT urogram</option>
+            <option value="mr-urogram">MR urogram</option>
+            <option value="ureteroscopy">Ureteroscopy with ureteral washing for cytology</option>
+            <option value="retrograde">Retrograde pyelogram with renal US or non-contrast CT KUB</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="result">Result</label>
+          <select id="result" required>
+            <option value="">Select</option>
+            <option value="positive">Positive</option>
+            <option value="negative">Negative</option>
+          </select>
+        </div>
+
+        <div id="positiveSection" class="details-section">
+          <div class="form-group">
+            <label for="positiveDetails">If positive, what was done for it?</label>
+            <textarea id="positiveDetails" required></textarea>
+          </div>
+        </div>
+      </div>
+
+      <button type="submit" class="submit-btn">Submit</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('wasTestDone').addEventListener('change', function() {
+      const detailsSection = document.getElementById('detailsSection');
+      detailsSection.style.display = this.value === 'yes' ? 'block' : 'none';
+    });
+
+    document.getElementById('result').addEventListener('change', function() {
+      const positiveSection = document.getElementById('positiveSection');
+      positiveSection.style.display = this.value === 'positive' ? 'block' : 'none';
+    });
+
+    document.getElementById('upperTractForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Form submitted successfully!');
+    });
+  </script>
+</body>
+</html>

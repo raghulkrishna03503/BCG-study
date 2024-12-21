@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exclusion Criteria</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #eef2f7;
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .hero-section {
+      background-color: #3b8f9a;
+      color: white;
+      padding: 20px 10px;
+      margin-bottom: 40px;
+    }
+
+    .hero-section h1 {
+      font-size: 1.8rem;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 40px;
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 15px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(10px);
+    }
+
+    #exclusionForm {
+      background-color: #ffffff;
+      width: 90%;
+      max-width: 800px;
+    }
+
+    #exclusionForm table {
+      width: 100%;
+      border-collapse: collapse;
+      border: none;
+    }
+
+    #exclusionForm table td {
+      padding: 12px;
+      vertical-align: top;
+      border: none;
+    }
+
+    #exclusionForm table td:first-child {
+      text-align: left;
+      padding-right: 15px;
+      font-weight: bold;
+      color: #333;
+      width: 60%;
+    }
+
+    #exclusionForm select, #exclusionForm input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ced4da;
+      border-radius: 4px;
+      font-size: 1rem;
+      color: #333;
+      outline: none;
+    }
+
+    #exclusionForm select:focus, #exclusionForm input:focus {
+      border-color: #3b8f9a;
+      box-shadow: 0 0 5px rgba(59, 143, 154, 0.5);
+    }
+
+    .criteria-detail {
+      display: none;
+      margin-top: 10px;
+    }
+
+    .button-container {
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    #exclusionForm button {
+      padding: 14px 45px;
+      background-color: #3b8f9a;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    #exclusionForm button:hover {
+      background-color: #2a6f74;
+    }
+
+    @media (max-width: 768px) {
+      #exclusionForm table td {
+        display: block;
+        width: 100%;
+      }
+      
+      #exclusionForm table td:first-child {
+        padding-bottom: 5px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="hero-section">
+    <h1>Exclusion Criteria</h1>
+  </section>
+    
+  <div class="container">
+    <center>
+      <form id="exclusionForm">
+        <table>
+          <tr>
+            <td>
+              <label for="isolatedLowGrade">Isolated low-grade Ta NMIBC</label>
+            </td>
+            <td>
+              <select id="isolatedLowGrade" class="criteria-select" required>
+                <option value="">Select</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+              </select>
+              <div class="criteria-detail">
+                <input type="text" placeholder="Enter which criteria is not fulfilled" class="detail-input">
+              </div>
+            </td>
+          </tr>
+          
+          <tr>
+            <td>
+              <label for="febrileIllness">Febrile illness, Urinary tract infection, active TB, anaphylactic reaction</label>
+            </td>
+            <td>
+              <select id="febrileIllness" class="criteria-select" required>
+                <option value="">Select</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+              </select>
+              <div class="criteria-detail">
+                <input type="text" placeholder="Enter which criteria is not fulfilled" class="detail-input">
+              </div>
+            </td>
+          </tr>
+          
+          <tr>
+            <td>
+              <label for="chronicTherapy">Ongoing chronic systemic therapy, other illness contraindication for intravesical therapy</label>
+            </td>
+            <td>
+              <select id="chronicTherapy" class="criteria-select" required>
+                <option value="">Select</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+              </select>
+              <div class="criteria-detail">
+                <input type="text" placeholder="Enter which criteria is not fulfilled" class="detail-input">
+              </div>
+            </td>
+          </tr>
+          
+          <tr>
+            <td>
+              <label for="mibc">MIBC, Locally advanced, metastatic carcinoma bladder</label>
+            </td>
+            <td>
+              <select id="mibc" class="criteria-select" required>
+                <option value="">Select</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+              </select>
+              <div class="criteria-detail">
+                <input type="text" placeholder="Enter which criteria is not fulfilled" class="detail-input">
+              </div>
+            </td>
+          </tr>
+          
+          <tr>
+            <td>
+              <label for="unwilling">Unable or unwilling to followed by and follow-up assessments as per study protocol</label>
+            </td>
+            <td>
+              <select id="unwilling" class="criteria-select" required>
+                <option value="">Select</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+              </select>
+              <div class="criteria-detail">
+                <input type="text" placeholder="Enter which criteria is not fulfilled" class="detail-input">
+              </div>
+            </td>
+          </tr>
+          
+          <tr>
+            <td>
+              <label for="atypicalVariant">Atypical variant histology</label>
+            </td>
+            <td>
+              <select id="atypicalVariant" class="criteria-select" required>
+                <option value="">Select</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+              </select>
+              <div class="criteria-detail">
+                <input type="text" placeholder="Enter which criteria is not fulfilled" class="detail-input">
+              </div>
+            </td>
+          </tr>
+          
+          <tr>
+            <td>
+              <label for="pregnant">Pregnant or nursing mother</label>
+            </td>
+            <td>
+              <select id="pregnant" class="criteria-select" required>
+                <option value="">Select</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+              </select>
+              <div class="criteria-detail">
+                <input type="text" placeholder="Enter which criteria is not fulfilled" class="detail-input">
+              </div>
+            </td>
+          </tr>
+          
+          <tr>
+            <td>
+              <label for="intolerance">Intolerance to Study intervention</label>
+            </td>
+            <td>
+              <select id="intolerance" class="criteria-select" required>
+                <option value="">Select</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+              </select>
+              <div class="criteria-detail">
+                <input type="text" placeholder="Enter which criteria is not fulfilled" class="detail-input">
+              </div>
+            </td>
+          </tr>
+          
+          <tr>
+            <td>
+              <label for="nonUrothelial">Non urothelial bladder carcinoma</label>
+            </td>
+            <td>
+              <select id="nonUrothelial" class="criteria-select" required>
+                <option value="">Select</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+              </select>
+              <div class="criteria-detail">
+                <input type="text" placeholder="Enter which criteria is not fulfilled" class="detail-input">
+              </div>
+            </td>
+          </tr>
+        </table>
+        <div class="button-container">
+          <button type="submit">Submit</button>
+        </div>
+      </form>
+    </center>
+  </div>
+
+  <script>
+    // Add event listeners to all criteria select dropdowns
+    document.querySelectorAll('.criteria-select').forEach(select => {
+      select.addEventListener('change', function() {
+        const detailInput = this.parentElement.querySelector('.criteria-detail');
+        const inputField = detailInput.querySelector('.detail-input');
+        
+        if (this.value === 'No') {
+          detailInput.style.display = 'block';
+          inputField.required = true;
+        } else {
+          detailInput.style.display = 'none';
+          inputField.required = false;
+          inputField.value = '';
+        }
+      });
+    });
+
+    // function validateForm(event) {
+    //   event.preventDefault();
+      
+    //   const selects = document.querySelectorAll('#exclusionForm select');
+    //   const detailInputs = document.querySelectorAll('.detail-input');
+    //   let isValid = true;
+    //   let message = '';
+      
+    //   selects.forEach(select => {
+    //     if (!select.value) {
+    //       isValid = false;
+    //       message = 'Please complete all fields before submitting.';
+    //     }
+    //   });
+      
+    //   detailInputs.forEach(input => {
+    //     if (input.required && !input.value.trim()) {
+    //       isValid = false;
+    //       message = 'Please provide details for all "No" responses.';
+    //     }
+    //   });
+      
+    //   if (!isValid) {
+    //     alert(message);
+    //     return false;
+    //   }
+      
+    //   alert('Form submitted successfully!');
+    //   return true;
+    // }
+  </script>
+</body>
+</html>

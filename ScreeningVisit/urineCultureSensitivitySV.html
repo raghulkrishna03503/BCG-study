@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Screening Visit - Urine Culture & Sensitivity</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #eef2f7;
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .hero-section {
+      background-color: #3b8f9a;
+      color: white;
+      padding: 20px 10px;
+      margin-bottom: 40px;
+    }
+
+    .hero-section h1 {
+      font-size: 1.8rem;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 40px;
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 15px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-group {
+      margin-bottom: 25px;
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      color: #5f6368;
+      margin-bottom: 8px;
+    }
+
+    select, input[type="date"], input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ced4da;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+
+    .details-section {
+      display: none;
+      margin-top: 20px;
+    }
+
+    .selected-organisms {
+      margin-top: 10px;
+      padding: 10px;
+      background-color: #f8f9fa;
+      border-radius: 4px;
+    }
+
+    .organism-tag {
+      display: inline-block;
+      background-color: #e2e6ea;
+      padding: 5px 10px;
+      margin: 2px;
+      border-radius: 15px;
+      font-size: 0.9rem;
+    }
+
+    .remove-organism {
+      margin-left: 5px;
+      cursor: pointer;
+      color: #dc3545;
+    }
+
+    .other-organism {
+      margin-top: 10px;
+    }
+
+    .submit-btn {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      background-color: #3b8f9a;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      margin-top: 30px;
+    }
+
+    .submit-btn:hover {
+      background-color: #2a6f74;
+    }
+  </style>
+</head>
+<body>
+  <section class="hero-section">
+    <h1>Screening Visit - Urine Culture & Sensitivity</h1>
+  </section>
+
+  <div class="container">
+    <form id="urineCultureForm">
+      <div class="form-group">
+        <label for="wasTestDone">Was a urine culture test done at this visit?</label>
+        <select id="wasTestDone" required>
+          <option value="">Select</option>
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+      </div>
+
+      <div id="detailsSection" class="details-section">
+        <div class="form-group">
+          <label for="reportDate">Date of Report</label>
+          <input type="date" id="reportDate" required>
+        </div>
+
+        <div class="form-group">
+          <label for="result">Result</label>
+          <select id="result" required>
+            <option value="">Select</option>
+            <option value="positive">Positive</option>
+            <option value="negative">Negative</option>
+          </select>
+        </div>
+
+        <div id="positiveSection" class="details-section">
+          <div class="form-group">
+            <label for="organisms">Select Organisms</label>
+            <select id="organisms">
+              <option value="">Select Organism</option>
+              <optgroup label="Gram-negative bacteria">
+                <option value="E. coli">E. coli</option>
+                <option value="Klebsiella spp.">Klebsiella spp.</option>
+                <option value="Proteus spp.">Proteus spp.</option>
+                <option value="Pseudomonas spp.">Pseudomonas spp.</option>
+                <option value="Salmonella spp.">Salmonella spp.</option>
+                <option value="Aeromonas spp.">Aeromonas spp.</option>
+                <option value="Serratia spp.">Serratia spp.</option>
+                <option value="Neisseria spp.">Neisseria spp.</option>
+                <option value="Providencia spp.">Providencia spp.</option>
+                <option value="Acinetobacter spp.">Acinetobacter spp.</option>
+                <option value="Veillonella spp.">Veillonella spp.</option>
+                <option value="Citrobacter spp.">Citrobacter spp.</option>
+                <option value="Bacteroids spp.">Bacteroids spp.</option>
+              </optgroup>
+              <optgroup label="Gram-positive bacteria">
+                <option value="Staphylococcus spp.">Staphylococcus spp.</option>
+                <option value="Streptococcus spp.">Streptococcus spp.</option>
+                <option value="Enterococcus spp.">Enterococcus spp.</option>
+                <option value="Lactobacillus spp.">Lactobacillus spp.</option>
+                <option value="Corynebacterium spp.">Corynebacterium spp.</option>
+                <option value="Aerococcus spp.">Aerococcus spp.</option>
+                <option value="Actinobaculum spp.">Actinobaculum spp.</option>
+                <option value="Gardnerella spp.">Gardnerella spp.</option>
+                <option value="Propionibacterium spp.">Propionibacterium spp.</option>
+              </optgroup>
+              <optgroup label="Other bacteria">
+                <option value="Ureaplasma spp.">Ureaplasma spp.</option>
+                <option value="Mycoplasma spp.">Mycoplasma spp.</option>
+              </optgroup>
+              <optgroup label="Fungi">
+                <option value="Aspergillus species">Aspergillus species</option>
+                <option value="Fusarium species">Fusarium species</option>
+                <option value="Trichosporon species">Trichosporon species</option>
+                <option value="Mucorales">Mucorales (Rhizopus, Mucor species)</option>
+              </optgroup>
+            </select>
+            <div id="selectedOrganisms" class="selected-organisms"></div>
+          </div>
+
+          <div class="form-group other-organism">
+            <label for="otherOrganism">Other Organism (if not listed above)</label>
+            <input type="text" id="otherOrganism" placeholder="Enter organism name">
+          </div>
+
+          <div class="form-group">
+            <label for="treatment">If positive (Add antibiotics details to conmed log)</label>
+            <select id="treatment" required>
+              <option value="">Select</option>
+              <option value="treated">Treated</option>
+              <option value="not-treated">Not Treated</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <button type="submit" class="submit-btn">Submit</button>
+    </form>
+  </div>
+
+  <script>
+    const selectedOrganisms = new Set();
+
+    document.getElementById('wasTestDone').addEventListener('change', function() {
+      const detailsSection = document.getElementById('detailsSection');
+      detailsSection.style.display = this.value === 'yes' ? 'block' : 'none';
+    });
+
+    document.getElementById('result').addEventListener('change', function() {
+      const positiveSection = document.getElementById('positiveSection');
+      positiveSection.style.display = this.value === 'positive' ? 'block' : 'none';
+    });
+
+    document.getElementById('organisms').addEventListener('change', function() {
+      if (this.value) {
+        selectedOrganisms.add(this.value);
+        updateSelectedOrganisms();
+        this.value = '';
+      }
+    });
+
+    function updateSelectedOrganisms() {
+      const container = document.getElementById('selectedOrganisms');
+      container.innerHTML = '';
+      selectedOrganisms.forEach(organism => {
+        const tag = document.createElement('span');
+        tag.className = 'organism-tag';
+        tag.innerHTML = `${organism} <span class="remove-organism" onclick="removeOrganism('${organism}')">&times;</span>`;
+        container.appendChild(tag);
+      });
+    }
+
+    function removeOrganism(organism) {
+      selectedOrganisms.delete(organism);
+      updateSelectedOrganisms();
+    }
+
+    document.getElementById('urineCultureForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Form submitted successfully!');
+    });
+  </script>
+</body>
+</html>
